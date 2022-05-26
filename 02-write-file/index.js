@@ -29,5 +29,10 @@ process.stdin.on('data', data => {
   }
 });
 
+process.on('SIGINT', function () {
+  process.stdout.write('Bye\n');
+  process.exit();
+});
+
 process.on('exit', () => console.log('Удачи !'));
 
